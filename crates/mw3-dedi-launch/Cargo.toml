@@ -1,0 +1,27 @@
+[package]
+name = "mw3-dedi-launch"
+description = "Dedicated server launcher: patch steam_api.dll string and start iw5mp_server.exe"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "mw3-dedi-launch"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+goblin = "0.9"
+thiserror = "2"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_Memory",
+    "Win32_System_Threading",
+] }

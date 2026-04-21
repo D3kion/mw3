@@ -1,0 +1,9 @@
+[package]
+name = "mw3-protocol"
+description = "Binary protocol types for TeknoMW3-compatible master server (TCP) and related magic constants"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+path = "src/lib.rs"
